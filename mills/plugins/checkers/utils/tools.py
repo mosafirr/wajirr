@@ -131,7 +131,7 @@ def getcards(text:str):
 
 
 def check_sk(key):
-    data = 'card[number]=4512238502012742&card[exp_month]=12&card[exp_year]=2022&card[cvc]=354'
+    data = 'card[number]=4512238502012742&card[exp_month]=12&card[exp_year]=2023&card[cvc]=354'
     first = requests.post('https://api.stripe.com/v1/tokens', data = data, auth = (key, ' '))
     status = first.status_code
     f_json = first.json()
