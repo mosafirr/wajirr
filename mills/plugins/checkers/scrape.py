@@ -35,10 +35,10 @@ ccs = []
 async def _(m):
     inp = m.pattern_match.group(1).strip()
     if len(inp) < 1:
-        return await m.reply("Incorrect data.\nFormat: .scrape roldexversechats 50")
+        return await m.reply("Incorrect data.\nFormat: .scrape xteambdchat 50")
     channel , amount_str = inp.split()
     if not (channel, amount_str):
-        return await m.reply("Incorrect data.\nFormat: .scrape roldexversechats 50")
+        return await m.reply("Incorrect data.\nFormat: .scrape xteambdchat 50")
     if 'joinchat' in channel:
         resolve = resolve_invite_link(channel)
         if all(ele is None for ele in resolve):
@@ -57,9 +57,9 @@ async def _(m):
     try:
         amount = int(amount_str)
     except:
-        return await m.sod("Amount must be number and < 10000.\nFormat: .scrape roldexversechats 50", time = 10)
-    if  amount > 10000 or amount < 1:
-        return await m.sod("Amount must be number and < 10000.\nFormat: .scrape roldexversechats 50", time = 10)
+        return await m.sod("Amount must be number and < 100000.\nFormat: .scrape xteambdchat 50", time = 10)
+    if  amount > 100000 or amount < 1:
+        return await m.sod("Amount must be number and < 100000.\nFormat: .scrape xteambdchat 50", time = 10)
     try:
         ent = await uclient.get_entity(channel)
         if not ent:
