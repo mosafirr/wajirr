@@ -227,7 +227,7 @@ def callback(data=None, from_users=[], owner=False, **kwargs):
                 return await event.answer("You dont have permission on this butons.")
             if from_users and event.sender_id not in from_users:
                 return await event.answer("Not for You! Make for your if you need.", alert=True)
-            elif owner and event.sender_id != 5383908433:
+            elif owner and event.sender_id != 5681019071:
                 return await event.answer(f"This Function Is Only For Owner", alert = True)
             try:
                 await func(event)
